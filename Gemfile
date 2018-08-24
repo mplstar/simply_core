@@ -5,7 +5,6 @@ gem 'rails', '4.0.2'
 gem 'rake', '< 11.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'   ## for test use
 gem 'mysql2', '~> 0.3.18'  ## for dev and prod
 
 # Use SCSS for stylesheets
@@ -51,15 +50,20 @@ gem 'sinatra', '1.4.4'
 
 ###  application specific gems ####
 gem 'haml-rails'
-gem 'roo'
 gem 'rest-client'
 gem 'will_paginate'
 gem 'whenever', :require => false
-gem 'crack'
 
 group :development, :test do
   gem 'rspec-rails', "2.14.2"
   gem 'rspec_api_documentation', "0.9.2"
   gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
+group :test do
+  gem 'sqlite3'
+  gem 'test-unit'
+  # gem 'minitest'
+end
