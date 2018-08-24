@@ -1,15 +1,34 @@
 class TokenController < ApplicationController
+  before_action :require_email_param, only: [:create, :get]
+
   def create
-    email = params[:email]
-    if email.nil?
-      @user_error = 'email is empty'
-      render action: 'bad_request'
+    if @email_param.nil?
+      render json: {email: @email_param, error: "bad email" }, status: 400
     else
-      render json: {welcome: email}
+      data = Email.create(email: @email_param)
+      if data
+        render json: {email: data.email, token: data.token}
+      else
+        render json: {email: @email_param}, status: 500  ## server error
+      end
     end
   end
 
-  def bad_request  ## client error 400
-    render json: {error: @user_error}, status: 400
+  def get
+    if @email_param.nil?
+      render json: {email: @email_param, error: "bad email" }, status: 400
+    else
+      data = Email.find_by_email(@email_param)
+      if data
+        render json: {email: data.email, token: data.token}
+      else
+        render json: {email: @email_param, error: "not found"}, status: 404
+      end
+    end
+  end
+
+  private
+  def require_email_param
+    @email_param = params.require(:email) ## do not handle error here, important!
   end
 end

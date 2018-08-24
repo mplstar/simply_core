@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe TokenController do
 
-  describe "GET 'create'" do
+  describe "POST 'services/token'" do
     it "returns http success" do
-      get 'create'
+      post 'create', { email: "abc@xyz" }
       response.should be_success
     end
   end

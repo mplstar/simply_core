@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Email do
   fixtures :emails
-  after(:all) { Email.delete_all }
   let(:email) { Email.new(email: "johndoe@gmail.com") }
   subject { email }
 
@@ -26,6 +25,7 @@ describe Email do
     context "when saved to db" do
       before { email.save }
       its(:token) { should_not be_nil }
+      after { email.destroy }
     end
   end
 
