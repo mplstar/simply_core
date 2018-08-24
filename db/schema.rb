@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824043400) do
+ActiveRecord::Schema.define(version: 20180824152108) do
+
+  create_table "emails", force: true do |t|
+    t.string   "email"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"

@@ -58,7 +58,8 @@ group :development, :test do
   gem 'rspec-rails', "2.14.2"
   gem 'rspec_api_documentation', "0.9.2"
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
+  gem 'rubocop-rspec'
   gem 'capybara'
 end
 

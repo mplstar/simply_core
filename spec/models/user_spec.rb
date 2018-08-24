@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#new" do
+    context "when initizalized" do
+      it { should be_new_record }
+      it { should respond_to(:email) }
+    end
+  end
 end
