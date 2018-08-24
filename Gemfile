@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'rake', '< 11.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3'   ## for test use
+gem 'mysql2', '~> 0.3.18'  ## for dev and prod
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -16,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,10 +38,28 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
+
+gem 'sinatra', '1.4.4'
+
+###  application specific gems ####
+gem 'haml-rails'
+gem 'roo'
+gem 'rest-client'
+gem 'will_paginate'
+gem 'whenever', :require => false
+gem 'crack'
+
+group :development, :test do
+  gem 'rspec-rails', "2.14.2"
+  gem 'rspec_api_documentation', "0.9.2"
+  gem 'shoulda-matchers'
+end
+
