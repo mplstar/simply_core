@@ -3,13 +3,11 @@ class TokenController < ApplicationController
 
   ### the HTTP status code are carefully chosen
   def create   ## no error handling here, seperation of responsibilities
-    @email = Email.create(email: @email_param)   ## instance variable for seperation of views
-    if @email.errors.empty?
+    begin
+      @email = Email.create(email: @email_param)   ## instance variable for seperation of views
       render json: {email: @email.email, token: @email.token}
-    elsif @email.errors.get(:email).present?
-      render json: {email: @email_param, error: @email.errors.get(:email).first }, status: 400
-    else
-      render json: {email: @email_param}, status: 500  ## server error
+    rescue ActiveRecord::RecordNotUnique => e
+      render :duplicate_email, status: 400 ## carefully choose the response status
     end
   end
 
@@ -25,7 +23,7 @@ class TokenController < ApplicationController
 
   private
   def require_email_param
+    ## handle missing parameter in application controller
     @email_param = params.require(:email) ## do not handle error here, important!
-    ## TODO: need general error handler for missing parameters, do not handle missing parameter in individual controllers
   end
 end
