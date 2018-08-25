@@ -1,0 +1,19 @@
+%h1 Current Emails
+
+%table
+  %thead
+    %tr
+      %th id
+      %th Email
+      %th Token
+      %th Register Time
+
+  %tbody
+    - @emails.each do |email|
+      %tr
+        %td= email.id
+        %td= email.email
+        %td= email.token
+        %td= email.created_at.to_formatted_s
+%br
+

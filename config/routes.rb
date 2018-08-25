@@ -1,4 +1,8 @@
 SimplyCore::Application.routes.draw do
+  scope '/console' do
+    resources :emails, only: [:index]
+  end
+
   post "services/token" => 'token#create'
   get "services/token" => 'token#get'
   get "services/token/create" => 'token#create'
