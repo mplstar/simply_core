@@ -27,6 +27,20 @@ describe Email do
       its(:token) { should_not be_nil }
       after { email.destroy }
     end
+    context "when email is invalid" do
+      it "should have error on email" do
+        email.email = "abc"
+        email.save
+        expect(email.errors.get(:email)).to eq(["invalid format"])
+      end
+    end
+    context "when email is valid" do
+      it "should have no error on email" do
+        email.email = "abc@gmail.com"
+        email.save
+        expect(email.errors.get(:email)).to be_nil
+      end
+    end
   end
 
 end
