@@ -68,3 +68,6 @@ group :test do
   gem 'test-unit'
   # gem 'minitest'
 end
+
+gem 'delayed_job_active_record'
+gem 'daemons'

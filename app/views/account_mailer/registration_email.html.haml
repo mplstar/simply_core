@@ -1,0 +1,15 @@
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Welcome to HealthFirst
+    %p
+      Thank you for contacting our website for registration
+      %br/
+    %p
+      To finish the registration, please click
+      =link_to "the registration link", registration_url(token: @token, host: 'healthfirst.xibcc.com')
+      %br/
+    %p
+      Thank you!

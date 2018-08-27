@@ -6,6 +6,7 @@ SimplyCore::Application.routes.draw do
   post "services/token" => 'token#create'
   get "services/token" => 'token#get'
   get "services/token/create" => 'token#create'
+  get "/invites/:token/join" => 'users#register', :as => 'registration'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
