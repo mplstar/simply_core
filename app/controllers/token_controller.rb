@@ -1,4 +1,5 @@
 class TokenController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :require_email_param, only: [:create, :get]
 
   ### the HTTP status code are carefully chosen
