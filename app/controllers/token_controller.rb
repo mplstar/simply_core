@@ -5,10 +5,14 @@ class TokenController < ApplicationController
   ### the HTTP status code are carefully chosen
   def create   ## no error handling here, seperation of responsibilities
     begin
-      @email = Email.create(email: @email_param)   ## instance variable for seperation of views
-      ## send out registration email asynchronously...
-      AccountMailer.delay(queue: "registration").registration_email(@email.email, @email.token)
-      render json: {email: @email.email, token: @email.token}
+      @email = Email.new(email: @email_param)   ## instance variable for seperation of views
+      if @email.save
+        ## send out registration email asynchronously...
+        AccountMailer.delay(queue: "registration").registration_email(@email.email, @email.token)
+        render json: {email: @email.email, token: @email.token}
+      else
+        render :cannot_save_email, status: 400  ## carefully choose the response status
+      end
     rescue ActiveRecord::RecordNotUnique => e
       render :duplicate_email, status: 400 ## carefully choose the response status
     end
