@@ -1,4 +1,5 @@
 SimplyCore::Application.routes.draw do
+  root :to => redirect('/docs')
   scope '/console' do
     resources :emails, only: [:index]
   end
