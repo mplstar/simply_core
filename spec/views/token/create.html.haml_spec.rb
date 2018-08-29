@@ -1,4 +1,4 @@
-require 'spec_helper'
+# require 'spec_helper'
 
 describe "token/create.html.haml" do
   pending "add some examples to (or delete) #{__FILE__}"

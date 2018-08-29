@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe TokenController do
 
   describe "POST 'services/token'" do
     it "returns http success" do
-      post 'create', { email: "abc@xyz.com" }
-      response.should be_success
+      post 'create', params: { email: "abc@xyz.com" }
+      expect(response).to be_success
     end
   end
 

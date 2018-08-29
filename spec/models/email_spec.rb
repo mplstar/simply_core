@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Email do
   fixtures :emails
@@ -6,8 +6,8 @@ describe Email do
   subject { email }
 
   it "should load proper fixture" do
-    emails(:one).email.should == 'user01@gmail.com'
-    emails(:two).email.should == 'user02@gmail.com'
+    expect(emails(:one).email).to eq('user01@gmail.com')
+    expect(emails(:two).email).to eq('user02@gmail.com')
   end
 
   describe "#new" do
@@ -31,14 +31,14 @@ describe Email do
       it "should have error on email" do
         email.email = "abc"
         email.save
-        expect(email.errors.get(:email)).to eq(["invalid format"])
+        expect(email.errors[:email]).to eq(["invalid format"])
       end
     end
     context "when email is valid" do
       it "should have no error on email" do
         email.email = "abc@gmail.com"
         email.save
-        expect(email.errors.get(:email)).to be_nil
+        expect(email.errors.has_key?(:email)).to be(false)
       end
     end
   end

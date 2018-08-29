@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 describe EmailsController do
   describe "routing" do
