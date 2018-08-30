@@ -1,238 +1,177 @@
 <!DOCTYPE html>
-<head>
-  <title>Token API</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="/docs/assets/stylesheets/bootstrap.css"/>
-  <link rel="stylesheet" href="/docs/assets/stylesheets/codemirror.css"/>
-  <link rel="stylesheet" href="/docs/assets/stylesheets/application.css"/>
-  <script src="/docs/assets/javascripts/jquery-1-7-2.js"></script>
-  <script src="/docs/assets/javascripts/jquery-livequery.js"></script>
-  <script src="/docs/assets/javascripts/jquery-base64.js"></script>
-  <script src="/docs/assets/javascripts/jquery-ui-1-8-16-min.js"></script>
-  <script src="/docs/assets/javascripts/codemirror.js"></script>
-  <script src="/docs/assets/javascripts/mode/css/css.js"></script>
-  <script src="/docs/assets/javascripts/mode/htmlmixed/htmlmixed.js"></script>
-  <script src="/docs/assets/javascripts/mode/javascript/javascript.js"></script>
-  <script src="/docs/assets/javascripts/mode/xml/xml.js"></script>
-  <script src="/docs/assets/javascripts/application.js"></script>
-  <script>
+<html>
+  <head>
+    <title>Token API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
 
-  </script>
-  <style>
-    td.required .name:after {
-      float: right;
-      content: "required";
-      font-weight: normal;
-      color: #F08080;
-    }
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
 
-    p {
-      padding: 15px;
-      font-size: 130%;
-    }
-  </style>
-</head>
-<body>
-<div class="container">
-<h1>Token API</h1>
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
-<div class="article">
-  <h2>Restfully create token by email</h2>
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
 
-  <h3>Parameters</h3>
-  <table class="parameters table table-striped table-bordered table-condensed">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td
-       class="required">
-      <span class="name">email</span>
-      </td>
-      <td>
-        <span class="description">a valid email adddress</span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
 
-  <div class='request'>
-    <h3>Request</h3>
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
 
-    <h4>Headers</h4>
-    <pre class="request headers">Host: example.org
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Token API</h1>
+
+      <div class="article">
+        <h2>Restfully create token by email</h2>
+        <h3>POST services/token</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">email</span>
+                </td>
+                <td>
+                  <span class="description">a valid email adddress</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Host: example.org
 Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
-    <h4>Route</h4>
-    <pre class="request route highlight">POST services/token</pre>
+          <h4>Route</h4>
+          <pre class="request route highlight">POST services/token</pre>
 
 
-    <h4>Body</h4>
+            <h4>Body</h4>
+            <pre class="request body">email=test%40gmail.com</pre>
 
-    <div class="request body"><textarea>email=test%40gmail.com</textarea></div>
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://healthfirst.xibcc.com/services/token&quot; -d &#39;email=test%40gmail.com&#39; -X POST \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Content-Type: application/x-www-form-urlencoded&quot; \
+	-H &quot;Cookie: &quot;</pre>
 
-    <h4>cURL</h4>
-    <pre class="request">curl &quot;http://healthfirst.xibcc.com/services/token&quot; -d &#39;email=test%40gmail.com&#39; -X POST -H &quot;Host: example.org&quot; -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -H &quot;Cookie: &quot;</pre>
-
-    <h4>wURL</h4>
-
-    <div class="wurl_form form-horizontal" id="wurl_form">
-      <form accept-charset="UTF-8" class="new_wurl well" id="new_wurl">
-        <input type="hidden" class="request content_type" value="application/x-www-form-urlencoded"/>
-        <input type="hidden" class="response content_type" value="application/json; charset=utf-8"/>
-
-        <div class="control-group">
-          <label class="control-label">
-            URL
-          </label>
-
-          <div class="controls url">
-            <select id="wurl_request_method" name="wurl[request_method]">
-              <option value="POST" selected="true">POST</option>
-              <option value="GET">GET</option>
-              <option value="POST">POST</option>
-              <option value="PUT">PUT</option>
-              <option value="DELETE">DELETE</option>
-              <option value="HEAD">HEAD</option>
-            </select>
-            <input id="wurl_request_url" name="wurl[request_url]" value="services/token">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">
-            Basic Auth
-          </label>
-
-          <div class="controls">
-            <div class="field_pair">
-              <input id="wurl_basic_auth_user" name="wurl[basic_auth_user]" placeholder="username">
-              <input id="wurl_basic_auth_password" name="wurl[basic_auth_password]"
-                     placeholder="password">
-            </div>
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label with-button">
-            <a class="btn trash_headers btn-small btn-danger" title="trash all headers"><i
-                class="icon-trash icon-white"></i></a>
-            <a class="btn add_header btn-small btn-inverse" title="add header"><i
-                class="icon-plus icon-white"></i></a>
-            <span class="text">Headers</span>
-          </label>
-
-          <div class="headers controls">
-            <div class="header_pair" style="display:none">
-              <input class="key ui-autocomplete-input" disabled="disabled" id="header_keys_"
-                     name="header_keys[]"
-                     type="text" autocomplete="off" role="textbox" aria-autocomplete="list"
-                     aria-haspopup="true">
-              <input class="value" disabled="disabled" id="header_values_" name="header_values[]"
-                     type="text">
-              <a class="btn delete_header btn-small btn-danger" title="delete header"><i
-                  class="icon-remove icon-white"></i></a>
-            </div>
-
-            <div class="header_pair">
-              <input class="key ui-autocomplete-input" id="header_keys_" name="header_keys[]"
-                     type="text"
-                     autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"
-                     value="Host">
-              <input class="value" id="header_values_" name="header_values[]" type="text"
-                     value="example.org">
-              <a class="btn delete_header btn-small btn-danger" title="delete header"><i
-                  class="icon-remove icon-white"></i></a>
-            </div>
-            <div class="header_pair">
-              <input class="key ui-autocomplete-input" id="header_keys_" name="header_keys[]"
-                     type="text"
-                     autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"
-                     value="Content-Type">
-              <input class="value" id="header_values_" name="header_values[]" type="text"
-                     value="application/x-www-form-urlencoded">
-              <a class="btn delete_header btn-small btn-danger" title="delete header"><i
-                  class="icon-remove icon-white"></i></a>
-            </div>
-            <div class="header_pair">
-              <input class="key ui-autocomplete-input" id="header_keys_" name="header_keys[]"
-                     type="text"
-                     autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"
-                     value="Cookie">
-              <input class="value" id="header_values_" name="header_values[]" type="text"
-                     value="">
-              <a class="btn delete_header btn-small btn-danger" title="delete header"><i
-                  class="icon-remove icon-white"></i></a>
-            </div>
-
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">
-            <a class="btn trash_queries btn-small btn-danger" title="trash all parameters"><i
-                class="icon-trash icon-white"></i></a>
-            <a class="btn add_param btn-small btn-inverse" title="add parameter"><i
-                class="icon-plus icon-white"></i></a>
-            <span>Query</span>
-          </label>
-
-          <div class="params controls">
-            <div class="param_pair" style="display:none">
-              <input class="key" disabled="disabled" id="param_keys_" name="param_keys[]" type="text">
-              <input class="value" disabled="disabled" id="param_values_" name="param_values[]"
-                     type="text">
-              <a class="btn delete_param btn-small btn-danger" title="delete parameter"><i
-                  class="icon-remove icon-white"></i></a>
-            </div>
-
-
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">
-            <span>Body</span>
-          </label>
-
-          <div class="post_body controls">
-            <textarea id="wurl_request_body" name="wurl[request_body]" rows="5"
-                      disabled="disabled"
-                      class="textarea_disabled">email=test%40gmail.com</textarea>
-          </div>
-        </div>
-        <div class="control-group">
-          <div class="controls">
-            <input class="clear_fields btn" id="clear_fields" type="button" value="Clear">
-            <input class="give_it_a_wurl btn btn-primary" type="submit" value="Give it a Wurl!">
-          </div>
-        </div>
-      </form>
-
-      <h3><a class="response_anchor"></a>Response</h3>
-      <h4>Headers</h4>
-      <pre class="response headers">X-Frame-Options: SAMEORIGIN
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
 X-XSS-Protection: 1; mode=block
 X-Content-Type-Options: nosniff
-X-UA-Compatible: chrome=1
 Content-Type: application/json; charset=utf-8
-ETag: &quot;5e4c9ddf7a42c4e07c8cf56595cf8859&quot;
+ETag: W/&quot;ff4b660373444dbb191850c1bb6093a9&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 8060e0c2-0b4d-4307-b0d9-baaca045a39b
-X-Runtime: 0.081645
+X-Request-Id: f44a93c3-158e-4b48-ae98-727fe611bd1e
+X-Runtime: 0.079652
 Content-Length: 69</pre>
-
-      <h4>Status</h4>
-      <pre class="response status">200 OK</pre>
-
-      <h4>Body</h4>
-
-      <div class="response body"><textarea>{"email":"test@gmail.com","token":"614cfbcb05fb455908429d652523e10c"}</textarea></div>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;email&quot;: &quot;test@gmail.com&quot;,
+  &quot;token&quot;: &quot;3b00079c9eea3f1bc09ef80ba63339d7&quot;
+}</pre>
+      </div>
     </div>
-  </div>
-  <hr/>
-</div>
-</div>
-</body>
+  </body>
 </html>

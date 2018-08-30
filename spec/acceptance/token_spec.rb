@@ -9,29 +9,27 @@ resource "Token" do
 
     example "Restfully create token by email" do
       do_request
-      expect(status).to eq 200
+      expect(status).to eq(200)
+      resp = JSON.parse(response_body)
+      # expect(resp['tags'].size).to eq(2)
     end
   end
 
-=begin
   get 'services/token' do
     parameter :email, "a valid email address", required: true
     before { Email.create(email: email) }
 
-    example "Restfully fetch token by email" do
-      example_request
-      status.should == 200
+    example_request "Restfully fetch token by email" do
+      expect(status).to eq(200)
     end
   end
 
   get 'services/token/create' do
     parameter :email, "a valid email address", required: true
 
-    example "Bad way to create token by email" do
-      example_request
-      status.should == 200
+    example_request "Bad way to create token by email" do
+      expect(status).to eq 200
     end
   end
-=end
 end
 

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.1'
-gem 'rake', '< 11.0'
+# gem 'rake', '< 11.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'mysql2', '~> 0.3.18'  ## for dev and prod
@@ -58,7 +58,9 @@ group :test do
   gem 'rspec-rails', "3.6.0"
   gem 'rspec-its'
   gem 'rspec-activemodel-mocks'
-  gem 'rspec_api_documentation'
+  # gem 'rspec_api_documentation', '0.9.2'
+  gem 'rspec_api_documentation', '5.1.0'
+  gem 'raddocs'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'rubocop-rspec'
