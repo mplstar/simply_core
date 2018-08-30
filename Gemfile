@@ -14,7 +14,8 @@ gem 'sass-rails'
 gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.2'
+# gem 'coffee-rails', '~> 4.2.2'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -54,13 +55,18 @@ gem 'rest-client'
 gem 'will_paginate'
 gem 'whenever', :require => false
 
+group :development, :test do
+  gem 'rspec_api_documentation', '0.9.2'
+  # gem 'rspec_api_documentation', '5.1.0'
+  # gem 'raddocs'
+  # gem 'apitome'
+end
+
 group :test do
-  gem 'rspec-rails', "3.6.0"
+  # gem 'rspec-rails', "3.6.0"
+  gem 'rspec-rails'
   gem 'rspec-its'
   gem 'rspec-activemodel-mocks'
-  # gem 'rspec_api_documentation', '0.9.2'
-  gem 'rspec_api_documentation', '5.1.0'
-  gem 'raddocs'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
   gem 'rubocop-rspec'

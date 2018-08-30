@@ -79,6 +79,6 @@ RSpec.configure do |config|
     config.docs_dir = Rails.root.join("public", "docs")
     #config.url_prefix = '/docs'
     config.curl_host = "http://healthfirst.xibcc.com/"
-    config.format = [:wurl]
+    config.format = [:json, :html]
   end
 end

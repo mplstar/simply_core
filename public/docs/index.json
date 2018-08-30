@@ -1,0 +1,31 @@
+{
+  "resources": [
+    {
+      "name": "Token",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Bad way to create token by email",
+          "link": "token/bad_way_to_create_token_by_email.json",
+          "groups": "all",
+          "route": "services/token/create",
+          "method": "get"
+        },
+        {
+          "description": "Restfully create token by email",
+          "link": "token/restfully_create_token_by_email.json",
+          "groups": "all",
+          "route": "services/token",
+          "method": "post"
+        },
+        {
+          "description": "Restfully fetch token by email",
+          "link": "token/restfully_fetch_token_by_email.json",
+          "groups": "all",
+          "route": "services/token",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

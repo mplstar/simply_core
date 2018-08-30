@@ -1,0 +1,49 @@
+{
+  "resource": "Token",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "services/token/create",
+  "description": "Bad way to create token by email",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "email",
+      "description": "a valid email address"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "services/token/create?email=test%40gmail.com",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "email": "test@gmail.com"
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"email\": \"test@gmail.com\",\n  \"token\": \"139fb926b73becaee4417dab2d7f1b28\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b1c4be0e491709f6fdf0ce8300ee3544\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "007e50ac-c4c9-4618-a84e-ce667e657ac6",
+        "X-Runtime": "0.006380",
+        "Content-Length": "69"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl -g \"http://healthfirst.xibcc.com/services/token/create?email=test%40gmail.com\" -X GET \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
