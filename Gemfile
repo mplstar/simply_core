@@ -56,7 +56,8 @@ gem 'will_paginate'
 gem 'whenever', :require => false
 
 group :development, :test do
-  gem 'rspec_api_documentation', '0.9.2'
+  gem 'rspec_api_documentation', :git => 'https://github.com/mplstar/rspec_api_documentation.git', :branch => 'master.0.x'
+  # gem 'rspec_api_documentation', '0.9.2'
   # gem 'rspec_api_documentation', '5.1.0'
   # gem 'raddocs'
   # gem 'apitome'

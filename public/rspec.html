@@ -281,78 +281,74 @@ a {
 <div class="results">
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_1" class="passed">Email</dt>
-    <script type="text/javascript">moveProgressBar('6.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">should load proper fixture</span><span class='duration'>0.04458s</span></dd>
+  <dt id="example_group_1" class="passed">Token</dt>
   </dl>
 </div>
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_2" class="passed">#new</dt>
+  <dt id="example_group_2" class="passed">POST services/token</dt>
+    <script type="text/javascript">moveProgressBar('4.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Restfully create token by email</span><span class='duration'>0.09923s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_3" class="passed">when initizalized</dt>
-    <script type="text/javascript">moveProgressBar('12.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">should respond to #email</span><span class='duration'>0.00226s</span></dd>
-    <script type="text/javascript">moveProgressBar('18.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">should be a new record</span><span class='duration'>0.00097s</span></dd>
-    <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should respond to #token</span><span class='duration'>0.00080s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_3" class="passed">GET services/token</dt>
+    <script type="text/javascript">moveProgressBar('8.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Restfully fetch token by email</span><span class='duration'>0.01981s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_4" class="passed">#save</dt>
+  <dt id="example_group_4" class="passed">GET services/token/create</dt>
+    <script type="text/javascript">moveProgressBar('12.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Bad way to create token by email</span><span class='duration'>0.01261s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_5" class="passed">when saved to db</dt>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_5" class="passed">TokenController</dt>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_6" class="passed">token</dt>
-    <script type="text/javascript">moveProgressBar('31.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">should not be nil</span><span class='duration'>0.00841s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_6" class="passed">POST &#39;services/token&#39;</dt>
+    <script type="text/javascript">moveProgressBar('16.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">returns http success</span><span class='duration'>0.01629s</span></dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_7" class="passed">when email is valid</dt>
-    <script type="text/javascript">moveProgressBar('37.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">should have no error on email</span><span class='duration'>0.00264s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">UsersController</dt>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_8" class="passed">when newly initilized</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_8" class="passed">GET &#39;register&#39;</dt>
   </dl>
 </div>
 <div id="div_group_9" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_9" class="passed">token</dt>
-    <script type="text/javascript">moveProgressBar('43.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">should be nil</span><span class='duration'>0.00095s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_9" class="passed">when token is not correct</dt>
+    <script type="text/javascript">moveProgressBar('20.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">raises Routing error</span><span class='duration'>0.01705s</span></dd>
   </dl>
 </div>
 <div id="div_group_10" class="example_group passed">
   <dl style="margin-left: 30px;">
-  <dt id="example_group_10" class="passed">when email is invalid</dt>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should have error on email</span><span class='duration'>0.00759s</span></dd>
+  <dt id="example_group_10" class="passed">when token is correct</dt>
+    <script type="text/javascript">moveProgressBar('25.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">returns http success</span><span class='duration'>0.03338s</span></dd>
   </dl>
 </div>
 <div id="div_group_11" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_11" class="passed">token/create.html.haml</dt>
+  <dt id="example_group_11" class="passed">EmailsHelper</dt>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('div_group_11');</script>
     <script type="text/javascript">makeYellow('example_group_11');</script>
-    <script type="text/javascript">moveProgressBar('56.2');</script>
-    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/views/token/create.html.haml_spec.rb (PENDING: No reason given)</span></dd>
+    <script type="text/javascript">moveProgressBar('29.1');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/helpers/emails_helper_spec.rb (PENDING: Not yet implemented)</span></dd>
   </dl>
 </div>
 <div id="div_group_12" class="example_group passed">
@@ -361,73 +357,157 @@ a {
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('div_group_12');</script>
     <script type="text/javascript">makeYellow('example_group_12');</script>
-    <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/helpers/token_helper_spec.rb (PENDING: No reason given)</span></dd>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/helpers/token_helper_spec.rb (PENDING: Not yet implemented)</span></dd>
   </dl>
 </div>
 <div id="div_group_13" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_13" class="passed">User</dt>
+  <dt id="example_group_13" class="passed">UsersHelper</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_13');</script>
+    <script type="text/javascript">makeYellow('example_group_13');</script>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/helpers/users_helper_spec.rb (PENDING: Not yet implemented)</span></dd>
   </dl>
 </div>
 <div id="div_group_14" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_14" class="passed">#new</dt>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_14" class="passed">AccountMailer</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_14');</script>
+    <script type="text/javascript">makeYellow('example_group_14');</script>
+    <script type="text/javascript">moveProgressBar('41.6');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/mailers/account_mailer_spec.rb (PENDING: Not yet implemented)</span></dd>
   </dl>
 </div>
 <div id="div_group_15" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_15" class="passed">when initizalized</dt>
-    <script type="text/javascript">moveProgressBar('68.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">should be a new record</span><span class='duration'>0.00247s</span></dd>
-    <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should respond to #email</span><span class='duration'>0.00588s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_15" class="passed">Email</dt>
+    <script type="text/javascript">moveProgressBar('45.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should load proper fixture</span><span class='duration'>0.00231s</span></dd>
   </dl>
 </div>
 <div id="div_group_16" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_16" class="passed">Token</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_16" class="passed">#new</dt>
   </dl>
 </div>
 <div id="div_group_17" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_17" class="passed">GET services/token</dt>
-    <script type="text/javascript">moveProgressBar('81.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">Restfully fetch token by email</span><span class='duration'>0.04185s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_17" class="passed">when initizalized</dt>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should be a new record</span><span class='duration'>0.00083s</span></dd>
+    <script type="text/javascript">moveProgressBar('54.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should respond to #email</span><span class='duration'>0.00207s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should respond to #token</span><span class='duration'>0.00061s</span></dd>
   </dl>
 </div>
 <div id="div_group_18" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_18" class="passed">POST services/token</dt>
-    <script type="text/javascript">moveProgressBar('87.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Restfully create token by email</span><span class='duration'>0.00862s</span></dd>
+  <dt id="example_group_18" class="passed">#save</dt>
   </dl>
 </div>
 <div id="div_group_19" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_19" class="passed">GET services/token/create</dt>
-    <script type="text/javascript">moveProgressBar('93.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">Bad way to create token by email</span><span class='duration'>0.00548s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_19" class="passed">when newly initilized</dt>
   </dl>
 </div>
 <div id="div_group_20" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_20" class="passed">TokenController</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_20" class="passed">token</dt>
+    <script type="text/javascript">moveProgressBar('62.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should be nil</span><span class='duration'>0.00070s</span></dd>
   </dl>
 </div>
 <div id="div_group_21" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_21" class="passed">POST &#39;services/token&#39;</dt>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">returns http success</span><span class='duration'>0.00632s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_21" class="passed">when saved to db</dt>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.14689 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "16 examples, 0 failures, 2 pending";</script>
+<div id="div_group_22" class="example_group passed">
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_22" class="passed">token</dt>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not be nil</span><span class='duration'>0.00361s</span></dd>
+  </dl>
+</div>
+<div id="div_group_23" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_23" class="passed">when email is invalid</dt>
+    <script type="text/javascript">moveProgressBar('70.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have error on email</span><span class='duration'>0.00636s</span></dd>
+  </dl>
+</div>
+<div id="div_group_24" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_24" class="passed">when email is valid</dt>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have no error on email</span><span class='duration'>0.00343s</span></dd>
+  </dl>
+</div>
+<div id="div_group_25" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_25" class="passed">User</dt>
+  </dl>
+</div>
+<div id="div_group_26" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_26" class="passed">#new</dt>
+  </dl>
+</div>
+<div id="div_group_27" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_27" class="passed">when initizalized</dt>
+    <script type="text/javascript">moveProgressBar('79.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should be a new record</span><span class='duration'>0.00828s</span></dd>
+    <script type="text/javascript">moveProgressBar('83.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should respond to #email</span><span class='duration'>0.00072s</span></dd>
+  </dl>
+</div>
+<div id="div_group_28" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_28" class="passed">Emails</dt>
+  </dl>
+</div>
+<div id="div_group_29" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_29" class="passed">GET /emails</dt>
+    <script type="text/javascript">moveProgressBar('87.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">works! (now write some real specs)</span><span class='duration'>0.18303s</span></dd>
+  </dl>
+</div>
+<div id="div_group_30" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_30" class="passed">emails/index</dt>
+    <script type="text/javascript">moveProgressBar('91.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">renders a list of emails</span><span class='duration'>0.00987s</span></dd>
+  </dl>
+</div>
+<div id="div_group_31" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_31" class="passed">token/create.html.haml</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_31');</script>
+    <script type="text/javascript">makeYellow('example_group_31');</script>
+    <script type="text/javascript">moveProgressBar('95.8');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/views/token/create.html.haml_spec.rb (PENDING: Not yet implemented)</span></dd>
+  </dl>
+</div>
+<div id="div_group_32" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_32" class="passed">users/register.html.haml</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_32');</script>
+    <script type="text/javascript">makeYellow('example_group_32');</script>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">add some examples to (or delete) /home/apache/projects/simply_core/spec/views/users/register.html.haml_spec.rb (PENDING: Not yet implemented)</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.43729 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "24 examples, 0 failures, 6 pending";</script>
 </div>
 </div>
 </body>
 </html>
-
-Randomized with seed 32109
-

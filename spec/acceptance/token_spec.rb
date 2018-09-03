@@ -3,6 +3,7 @@ require 'rspec_api_documentation/dsl'
 
 resource "Token" do
   let(:email) {  "test@gmail.com" }
+  let(:example) { |example| example }
 
   post 'services/token' do
     parameter :email, "a valid email adddress", required: true

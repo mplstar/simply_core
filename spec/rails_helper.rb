@@ -77,8 +77,8 @@ RSpec.configure do |config|
   RspecApiDocumentation.configure do |config|
     config.app = Rails.application
     config.docs_dir = Rails.root.join("public", "docs")
-    #config.url_prefix = '/docs'
+    config.url_prefix = '/docs'
     config.curl_host = "http://healthfirst.xibcc.com/"
-    config.format = [:json, :html]
+    config.format = [:wurl]
   end
 end
