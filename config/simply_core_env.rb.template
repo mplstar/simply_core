@@ -1,0 +1,16 @@
+# Modify this file to reflect your system environment
+# DO NOT check in this file to version control
+
+ENV['COMPANY_NAME']    = 'HealthFirst'
+ENV['COMPANY_EMAIL']   = 'healthfirst@xfccorp.com'
+ENV['DATABASE']        = 'health_first'
+ENV['DB_USERNAME']     = 'health_first'
+ENV['DB_PASSWORD']     = 'cybercoders'
+ENV['WEB_SERVER']      = 'healthfirst.xibcc.com'
+ENV['APP_SERVER']      = 'app.xibcc.com'
+ENV['SMTP_HOST']       = 'mail.xfccorp.com'
+ENV['SMTP_PORT']       = '26'
+ENV['SMTP_DOMAIN']     = 'xfccorp.com'
+ENV['SMTP_USER']       = 'healthfirst@xfccorp.com'
+ENV['SMTP_PASSWORD']   = 'seattle_lakes'
+

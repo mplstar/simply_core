@@ -15,15 +15,15 @@ SimplyCore::Application.configure do
 
   # Don't care if the mailer can't send.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = {host: 'healthfirst.xibcc.com'}
+  config.action_mailer.default_url_options = {host: ENV['WEB_SERVER']}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    address:              'mail.xfccorp.com',
-    port:                 26,
-    domain:               'xfccorp.com',
-    user_name:            'healthfirst@xfccorp.com',
-    password:             'seattle_lakes',
+    address:              ENV['SMTP_HOST'],
+    port:                 ENV['SMTP_PORT'].to_i,
+    domain:               ENV['SMTP_DOMAIN'],
+    user_name:            ENV['SMTP_USER'],
+    password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true,
     openssl_verify_mode:  'none'

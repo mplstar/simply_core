@@ -8,9 +8,9 @@ development: &development
   encoding: utf8
   reconnect: false
   host: localhost
-  database: health_first
-  username: health_first
-  password: cybercoders
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
