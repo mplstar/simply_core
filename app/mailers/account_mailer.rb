@@ -1,5 +1,5 @@
 class AccountMailer < ActionMailer::Base
-  default from: "HealthFirst <healthfirst@xfccorp.com>"
+  default from: "Honululu <registration@xfccorp.com>"
 
   def registration_email(email, token)
     @email = email
