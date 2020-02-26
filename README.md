@@ -3,9 +3,9 @@ README
 
 Play with the sample services hosted in my dev box here:
 ---
-* http://healthfirst.xibcc.com/ for API documentation
-* http://healthfirst.xibcc.com/rspec for rspec test results
-* http://healthfirst.xibcc.com/console/emails is a developer's backdoor to data
+* http://registration.xibcc.com/ for API documentation
+* http://registration.xibcc.com/rspec for rspec test results
+* http://registration.xibcc.com/console/emails is a developer's backdoor to data
 
 Setup Your Dev Environment
 ---
@@ -21,7 +21,7 @@ Click https://rvm.io/rvm/install to install rvm, then run `rvm install 2.2.3`
 `git clone git@github.com:mplstar/simply_core.git`  
 `cd simply_core`  
 `bundle install`  
-* Edit the following files that has hardcoded *healthfirst* in it, change it to the actual host and database you are using:  
+* Edit the following files that has hardcoded *registration* in it, change it to the actual host and database you are using:  
 *app/mailers/account_mailer.rb* (line 2)  
 *app/views/account_mailer/registration_email.html.haml* (line 12)  
 *config/environments/development.rb* (line 20 .. 30, can fake it if this module is fully tested)  
